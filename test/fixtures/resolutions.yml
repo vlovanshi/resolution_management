@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gym: MyString
+  fruit: MyString
+  coaching: MyString
+  program: MyString
+
+two:
+  gym: MyString
+  fruit: MyString
+  coaching: MyString
+  program: MyString
