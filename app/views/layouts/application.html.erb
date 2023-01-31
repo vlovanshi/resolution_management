@@ -9,7 +9,20 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm px-3">
+    <a class="navbar-brand fw-bold text-uppercase" href="/">Resolution Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <li class="nav-item px-2"><%= link_to "Ankit", resolutions_path(name: 'ankit'), class: 'nav-link h6 mb-0 text-dark'%></li>
+          <li class="nav-item px-2"><%= link_to "Vinayak", resolutions_path(name: 'vinayak'), class: 'nav-link h6 mb-0 text-dark'%></li>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <body>
     <%= yield %>
   </body>

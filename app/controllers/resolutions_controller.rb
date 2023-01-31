@@ -1,5 +1,6 @@
 class ResolutionsController < ApplicationController
   def index
-  	@resolutions = Resolution.all
+    @name = params[:name]
+    @resolutions = Resolution.all
   end
 end
