@@ -1,0 +1,64 @@
+<div class="row mx-0">
+  <div class="col-md-4 mx-auto border p-4 rounded-3 bg-light form-company">
+    <%= form_with(model: resolution) do |form| %>
+      <% if resolution.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(resolution.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+          <ul>
+            <% resolution.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= form.label :Date, class: 'form-label' %><br />
+        <%= form.date_field :date, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :gym, class: 'form-label' %>
+        <%= form.text_field :gym, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :fruit, class: 'form-label' %>
+        <%= form.text_field :fruit, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :green_tea, class: 'form-label' %>
+        <%= form.text_field :green_tea, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :no_junk_food, class: 'form-label' %>
+        <%= form.text_field :no_junk_food, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :coaching, class: 'form-label' %>
+        <%= form.text_field :coaching, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :program, class: 'form-label' %>
+        <%= form.text_field :program, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :project, class: 'form-label' %>
+        <%= form.text_field :project, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :speaking, class: 'form-label' %>
+        <%= form.text_field :speaking, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :words, class: 'form-label' %>
+        <%= form.text_field :words, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= form.label :user, class: 'form-label' %>
+        <%= form.collection_select :user_id, User.order(:id), :id, :first_name, class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
