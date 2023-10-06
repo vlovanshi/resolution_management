@@ -5,6 +5,7 @@ class ResolutionsController < ApplicationController
   end
 
   def show
+    #show method
     @resolution = Resolution.find(params[:id])
   end
 
