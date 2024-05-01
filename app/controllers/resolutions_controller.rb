@@ -1,11 +1,11 @@
 class ResolutionsController < ApplicationController
+  before_action :find_resolution, only: [:show, :destroy]
   def index
     @user = User.find_by(first_name: params[:name]) || User.first
     @resolutions = @user.resolutions
   end
 
   def show
-    @resolution = Resolution.find(params[:id])
   end
 
   def new
@@ -27,7 +27,6 @@ class ResolutionsController < ApplicationController
   end
 
   def destroy
-    @resolution = Resolution.find(params[:id])
     @resolution.destroy
 
     respond_to do |format|
@@ -40,5 +39,9 @@ class ResolutionsController < ApplicationController
 
   def resolution_params
     params.require(:resolution).permit!
+  end
+
+  def find_resolution
+    @resolution = Resolution.find(params[:id])
   end
 end
