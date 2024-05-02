@@ -1,7 +1,7 @@
 class ResolutionsController < ApplicationController
   before_action :find_resolution, only: [:show, :destroy]
   def index
-    @user = User.find_by(first_name: params[:name]) || User.first
+    @user = User.find_by(first_name: params[:name]) || User.first #take first user if not available
     @resolutions = @user.resolutions
   end
 
